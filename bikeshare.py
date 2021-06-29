@@ -51,7 +51,7 @@ def input_time():
             return 'no_filter'
         time_filter = input('\nThat doesn\'t look right. \nTo filter the data by month, type \"month\". \nTo filter the data by day of the week, type \"day\". \nTo apply no filter, type, \"nada\". ')
 
-# why don't you just _tell_ me the month you want to review?
+# which month do you want to review?
 def input_month(m):
     if m == 'month':
         month = input('\nType which month you want (January through June only): \n').lower()
