@@ -11,11 +11,11 @@ city_data = {
 
 # why don't you just _tell_ me the city you want to view?
 def input_city():
-    print('\nYou want to explore bikeshare data? You got it. \n\nTell me what city: ')
+    print('\nDo you want to explore bikeshare data? You got it. \n\nTell me what city: ')
     print('Chicago = 1 \nNew York City = 2 \nWashington DC = 3')
     city = input('Your choice: ')
     city = city.lower()
-    
+
     # input error handling
     while True:
         if city == '1' or city == 'chicago':
@@ -38,7 +38,7 @@ def input_time():
     print('\nTo filter the data by month, type \"month\". \nTo filter the data by day of the week, type \"day\". \nTo apply no filter, type, \"nada\". ')
     time_filter = input('\nYour choice: ')
     time_filter = time_filter.lower()
-    
+
     while True:
         if time_filter == "month":
             print('\nMonths. Sounds good. Continuing.')
@@ -94,7 +94,7 @@ def time_filters(df, time_filter, month, week_day):
         df = df[df['day_of_week'] == day_of_week]
     return df
 
-''' 
+'''
 #1 Popular times of travel (i.e., occurs most often in the start time)
 most common month
 most common day of week
@@ -118,7 +118,7 @@ def hour_freq(df):
     calc = str(df.hour.mode()[0])
     result = '\nThe most common hour of the week for travel is: ' + calc
     return result
-    
+
 
 
 '''
@@ -179,13 +179,13 @@ def birth_data(df):
     try:
         earliest = np.min(df['Birth Year'])
         print('\nThe earliest birth year is: ' + str(int(earliest)))
-        
+
         most_recent = np.max(df['Birth Year'])
         print('The most recent birth year is: ' + str(int(most_recent)))
-        
+
         most_common = df['Birth Year'].mode()[0]
         print('The most common birth year is: ' + str(int(most_common)))
-        
+
         return ''
     except:
         print('\nNo data for the selected filter.')
@@ -196,7 +196,7 @@ Raw data is displayed upon request by the user in this manner: Script should pro
 def raw_data(df):
     row_index = 0
     prompt = input('\nDo you want to see 5 lines of raw data? \nType \"Yes\" or \"No\": ').lower()
-    
+
     while True:
         if prompt == 'no':
             return
@@ -214,7 +214,7 @@ def process(f, df):
     print('This result took %s seconds to calculate.' % (time.time() - start_time))
     print('------')
 
-        
+
 # get the party started
 def main():
     city = input_city()
@@ -224,12 +224,12 @@ def main():
     df = load_data(city)
     df = time_filters(df, time_filter, month, day)
     raw_data(df)
-    
+
     # calculate the outputs
-    run_functions = [month_freq, day_freq, hour_freq, popular_stations, common_trip, trip_duration, user_counts, gender_counts, birth_data]    
+    run_functions = [month_freq, day_freq, hour_freq, popular_stations, common_trip, trip_duration, user_counts, gender_counts, birth_data]
     for x in run_functions:
         process(x, df)
-    
+
     # ask if user wants to go again
     start_over = input('\nDo you want to try again? Type \"Yes\" or \"No\": ').lower()
     if start_over != 'yes' and start_over != 'no':
@@ -238,7 +238,7 @@ def main():
         main()
     else:
         print('\nThanks for riding!\n')
-    
-    
+
+
 if __name__ == '__main__':
     main()
