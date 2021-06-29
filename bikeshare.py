@@ -201,9 +201,9 @@ def raw_data(df):
         if prompt == 'no':
             return
         if prompt == 'yes':
-            print(df[row_index: row_index + 5])
-            row_index = row_index + 5
-        prompt = input('\nDo you want to see 5 lines of raw data? \nType \"Yes\" or \"No\": ').lower()
+            print(df[row_index: row_index + 10])
+            row_index = row_index + 10
+        prompt = input('\nDo you want to see 10 lines of raw data? \nType \"Yes\" or \"No\": ').lower()
 
 
 # calculating processing times
