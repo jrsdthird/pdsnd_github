@@ -14,4 +14,5 @@ new_york.csv -- 2017 Jan-Jun data file for New York City
 washington.csv -- 2017 Jan-Jun data file for Washington DC
 
 ### Credits
-Scheil
+Data provided by a national bikeshare provider.
+Python code written by Scheil.
