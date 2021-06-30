@@ -9,7 +9,9 @@ Takes filter inputs from the user and provides summary metrics.
 
 ### Files used
 bikeshare.py -- main program
-*.csv -- data files 
+chicago.csv -- 2017 Jan-Jun data file for Chicago
+new_york.csv -- 2017 Jan-Jun data file for New York City
+washington.csv -- 2017 Jan-Jun data file for Washington DC
 
 ### Credits
 Scheil
